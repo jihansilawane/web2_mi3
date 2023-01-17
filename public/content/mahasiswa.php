@@ -12,25 +12,25 @@
                 <table class="table table-bordered">
                     <thead class="bg-light">
                         <tr>
-                            <th>Nim</th>
+                            <th>NIM</th>
                             <th>Nama</th>
                             <th>Jurusan</th>
                             <th>Alamat</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>123</td>
-                            <td>Mahmud</td>
-                            <td>Manajemen Informatika</td>
-                            <td>Ambon</td>
-                        </tr>
-                        <tr>
-                            <td>124</td>
-                            <td>Marko</td>
-                            <td>Manajemen Informatika</td>
-                            <td>Ambon</td>
-                        </tr>
+                        <?php
+                        $sql = $con->query("SELECT * FROM mahasiswa");
+                        while ($row = $sql->fetch()) {
+                            echo "<tr>
+                                    <td>$row[nim]</td>
+                                    <td>$row[nama]</td>
+                                    <td>$row[jurusan]</td>
+                                    <td>$row[alamat]</td>
+                                </tr>";
+                        }
+                        ?>
+
                     </tbody>
                 </table>
 
@@ -49,7 +49,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="index.php?page=mahasiswa_save" method="POST">
                     <div class="mb-2">
                         <label for="" class="form-label">NIM</label>
                         <input type="text" class="form-control" name="nim" placeholder="Masukan NIM..">
