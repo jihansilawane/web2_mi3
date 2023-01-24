@@ -16,6 +16,7 @@
                             <th>Nama</th>
                             <th>Jurusan</th>
                             <th>Alamat</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,7 +28,14 @@
                                     <td>$row[nama]</td>
                                     <td>$row[jurusan]</td>
                                     <td>$row[alamat]</td>
+                                    <td>
+                                        <a href='index.php?page=mahasiswa_edit&nim=$row[nim]' class='btn btn-sm btn-warning'><i class='bi-pencil-square'></i></a>
+                                        <a href='index.php?page=mahasiswa_delete&nim=$row[nim]' class='btn btn-sm btn-danger' onclick=\"return confirm('Hapus Data?')\"><i class='bi-trash'></i></a>
+                                    </td>
                                 </tr>";
+
+                            //delete -> get nim -> delete data where nim
+                            //edit -> get nim -> select where nim -> show di form -> update
                         }
                         ?>
 
