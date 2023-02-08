@@ -23,18 +23,18 @@ require_once 'config/koneksi.php';
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-6 mx-auto">
+            <div class="col-4 mx-auto">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Form Login</h5>
-                        <form action="index.php?page=user_save" method="POST">
+                        <form action="ceklogin.php" method="POST">
                             <div class="mb-2">
                                 <label for="" class="form-label">Username</label>
-                                <input type="text" class="form-control" name="username" placeholder="Masukan Username..">
+                                <input type="text" class="form-control" name="username" placeholder="Masukan Username.." required autocomplete="off">
                             </div>
                             <div class="mb-4">
                                 <label for="" class="form-label">Password</label>
-                                <input type="text" class="form-control" name="password" placeholder="Masukan Password..">
+                                <input type="password" class="form-control" name="password" placeholder="Masukan Password..">
                             </div>
                             <div class="mt-2 d-grid">
                                 <button type="submit" class="btn btn-primary">Login</button>
